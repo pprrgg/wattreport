@@ -58,7 +58,7 @@ const InicioSection = () => {
             >
               Watt
             </span>
-            <span>.Report</span>
+            <span>.report</span>
           </Typography>
 
           {/* Subtitle */}
