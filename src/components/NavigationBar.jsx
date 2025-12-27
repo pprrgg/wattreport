@@ -67,9 +67,21 @@ export default function TopNavBar() {
   ];
 
   const bottomMenu = [
-    { label: "Contacto", path: "/contacto", icon: <ContactMailIcon fontSize="small" /> },
-    { label: "Términos", path: "/terminos", icon: <GavelIcon fontSize="small" /> },
-    { label: "Privacidad", path: "/privacidad", icon: <PolicyIcon fontSize="small" /> },
+    {
+      label: "Contacto",
+      path: "/contacto",
+      icon: <ContactMailIcon fontSize="small" />,
+    },
+    {
+      label: "Términos",
+      path: "/terminos",
+      icon: <GavelIcon fontSize="small" />,
+    },
+    {
+      label: "Privacidad",
+      path: "/privacidad",
+      icon: <PolicyIcon fontSize="small" />,
+    },
     { label: "Sobre IT", path: "/sobre", icon: <InfoIcon fontSize="small" /> },
   ];
 
@@ -119,7 +131,9 @@ export default function TopNavBar() {
       const workbook = XLSX.read(data, { type: "array" });
 
       const sheets = workbook.SheetNames.reduce((acc, name) => {
-        acc[name] = XLSX.utils.sheet_to_json(workbook.Sheets[name], { header: 1 });
+        acc[name] = XLSX.utils.sheet_to_json(workbook.Sheets[name], {
+          header: 1,
+        });
         return acc;
       }, {});
 
@@ -139,27 +153,34 @@ export default function TopNavBar() {
   const handleLangClick = (event) => {
     setLangAnchorEl(event.currentTarget);
   };
+const messages = {
+  en: "English is not available for your IP.",
+  fr: "Français n'est pas disponible pour votre IP.",
+  de: "Deutsch ist für Ihre IP nicht verfügbar.",
+  it: "Italiano non è disponibile per il tuo IP.",
+};
 
-  const handleLangSelect = (lang) => {
-    if (lang === "es") {
-      setLanguage(lang);
-    } else {
-      const langNames = {
-        en: "English",
-        fr: "Français",
-        de: "Deutsch",
-        it: "Italiano",
-      };
-      setSnackbarMessage(`${langNames[lang]} is not available for your IP.`);
-      setSnackbarOpen(true);
-    }
-    setLangAnchorEl(null);
-  };
+const handleLangSelect = (lang) => {
+  if (lang === "es") {
+    setLanguage(lang);
+  } else {
+    setSnackbarMessage(messages[lang] || "Language not available");
+    setSnackbarOpen(true);
+  }
+  setLangAnchorEl(null);
+};
 
   return (
     <>
       {/* TOP NAV */}
-      <AppBar position="fixed" sx={{ bgcolor: "white", borderBottom: "1px solid #ddd", boxShadow: "none" }}>
+      <AppBar
+        position="fixed"
+        sx={{
+          bgcolor: "white",
+          borderBottom: "1px solid #ddd",
+          boxShadow: "none",
+        }}
+      >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           {/* BottomNavigation para páginas */}
           <BottomNavigation
@@ -177,14 +198,23 @@ export default function TopNavBar() {
             sx={{ bgcolor: "white", flexGrow: 1 }}
           >
             {pages.map((item) => (
-              <BottomNavigationAction key={item.label} label={item.label} icon={item.icon} />
+              <BottomNavigationAction
+                key={item.label}
+                label={item.label}
+                icon={item.icon}
+              />
             ))}
           </BottomNavigation>
 
           {/* Selector de idioma vertical */}
-          <IconButton onClick={handleLangClick} sx={{ flexDirection: "column" }}>
+          <IconButton
+            onClick={handleLangClick}
+            sx={{ flexDirection: "column" }}
+          >
             <LanguageIcon />
-            <Typography variant="caption">{language === "es" ? "🇪🇸 Español" : language}</Typography>
+            <Typography variant="caption">
+              {language === "es" ? "🇪🇸 Español" : language}
+            </Typography>
           </IconButton>
         </Toolbar>
       </AppBar>
@@ -216,7 +246,11 @@ export default function TopNavBar() {
           {Object.entries(groupedData).map(([grupo, sectores]) => (
             <React.Fragment key={grupo}>
               <ListItemButton onClick={() => setOpenGroup(grupo)}>
-                {openGroup === grupo ? <ArrowDropDownIcon /> : <ArrowRightIcon />}
+                {openGroup === grupo ? (
+                  <ArrowDropDownIcon />
+                ) : (
+                  <ArrowRightIcon />
+                )}
                 <ListItemText primary={grupo.replaceAll("_", " ")} />
               </ListItemButton>
 
@@ -267,12 +301,11 @@ export default function TopNavBar() {
         open={Boolean(langAnchorEl)}
         onClose={() => setLangAnchorEl(null)}
       >
-<MenuItem onClick={() => handleLangSelect("es")}>🇪🇸 Español</MenuItem>
-<MenuItem onClick={() => handleLangSelect("en")}>🇬🇧 English</MenuItem>
-<MenuItem onClick={() => handleLangSelect("fr")}>🇫🇷 Français</MenuItem>
-<MenuItem onClick={() => handleLangSelect("de")}>🇩🇪 Deutsch</MenuItem>
-<MenuItem onClick={() => handleLangSelect("it")}>🇮🇹 Italiano</MenuItem>
-
+        <MenuItem onClick={() => handleLangSelect("es")}>🇪🇸 Español</MenuItem>
+        <MenuItem onClick={() => handleLangSelect("en")}>🇬🇧 English</MenuItem>
+        <MenuItem onClick={() => handleLangSelect("fr")}>🇫🇷 Français</MenuItem>
+        <MenuItem onClick={() => handleLangSelect("de")}>🇩🇪 Deutsch</MenuItem>
+        <MenuItem onClick={() => handleLangSelect("it")}>🇮🇹 Italiano</MenuItem>
       </Menu>
 
       {/* BOTTOM NAV */}
