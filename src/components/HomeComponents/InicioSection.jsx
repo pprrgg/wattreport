@@ -36,22 +36,31 @@ const InicioSection = () => {
       >
         <Container maxWidth="lg">
           {/* Title */}
-          <Typography
-            variant="h1"
-            sx={{
-              fontSize: {
-                xs: "2rem",
-                sm: "2.5rem",
-                md: "3rem",
-                lg: "3.5rem",
-              },
-              mb: 3,
-              fontFamily: "'Playfair Display', serif",
-              fontWeight: 700,
-            }}
-          >
-            watt.report
-          </Typography>
+<Typography
+  variant="h1"
+  sx={{
+    fontSize: {
+      xs: "2rem",
+      sm: "2.5rem",
+      md: "3rem",
+      lg: "3.5rem",
+    },
+    mb: 3,
+    fontFamily: "'Playfair Display', serif",
+    fontWeight: 900,
+  }}
+>
+  <span
+    style={{
+      color: "#FF7F00", // naranja
+      fontSize: "1.5em", // un poco más grande
+    }}
+  >
+    Watt
+  </span>
+  <span>.Report</span>
+</Typography>
+
 
           {/* Subtitle */}
           <Typography
