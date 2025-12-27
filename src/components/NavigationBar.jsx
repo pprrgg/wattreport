@@ -4,6 +4,7 @@ import {
   BottomNavigation,
   BottomNavigationAction,
   Menu,
+  MenuItem,
   List,
   ListItemButton,
   ListItemText,
@@ -12,6 +13,11 @@ import {
   InputAdornment,
   Box,
   Divider,
+  Snackbar,
+  Alert,
+  IconButton,
+  Toolbar,
+  Typography,
 } from "@mui/material";
 
 import HomeIcon from "@mui/icons-material/Home";
@@ -25,6 +31,7 @@ import DescriptionIcon from "@mui/icons-material/Description";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import LanguageIcon from "@mui/icons-material/Language";
 
 import { useNavigate, useLocation } from "react-router-dom";
 import * as XLSX from "xlsx";
@@ -46,11 +53,16 @@ export default function TopNavBar() {
   const [openGroup, setOpenGroup] = useState(null);
   const [openSector, setOpenSector] = useState({});
 
+  // LANGUAGE SELECTOR
+  const [langAnchorEl, setLangAnchorEl] = useState(null);
+  const [language, setLanguage] = useState("es"); // default 🇪🇸 Español
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
+
   // ---------------- CONFIG ----------------
   const pages = [
     { label: "Inicio", icon: <HomeIcon />, path: "/" },
     { label: "Informes", icon: <NoteAltOutlinedIcon />, path: "/Blog" },
-    // { label: "Plantillas", icon: <DescriptionIcon />, isMenu: true },
     { label: "Ayuda", icon: <HelpOutlineIcon />, path: "/ayuda" },
   ];
 
@@ -123,49 +135,58 @@ export default function TopNavBar() {
     }
   };
 
-  // ---------------- RENDER ----------------
+  // LANGUAGE HANDLERS
+  const handleLangClick = (event) => {
+    setLangAnchorEl(event.currentTarget);
+  };
+
+  const handleLangSelect = (lang) => {
+    if (lang === "es") {
+      setLanguage(lang);
+    } else {
+      const langNames = {
+        en: "English",
+        fr: "Français",
+        de: "Deutsch",
+        it: "Italiano",
+      };
+      setSnackbarMessage(`${langNames[lang]} is not available for your IP.`);
+      setSnackbarOpen(true);
+    }
+    setLangAnchorEl(null);
+  };
+
   return (
     <>
       {/* TOP NAV */}
-      <AppBar
-        position="fixed"
-        sx={{
-          bgcolor: "white",
-          borderBottom: "1px solid #ddd",
-          boxShadow: "none",
-        }}
-      >
-        <BottomNavigation
-          value={topValue}
-          showLabels
-          onChange={(event, newValue) => {
-            const item = pages[newValue];
-            setTopValue(newValue);
+      <AppBar position="fixed" sx={{ bgcolor: "white", borderBottom: "1px solid #ddd", boxShadow: "none" }}>
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+          {/* BottomNavigation para páginas */}
+          <BottomNavigation
+            value={topValue}
+            showLabels
+            onChange={(event, newValue) => {
+              const item = pages[newValue];
+              setTopValue(newValue);
+              if (item.isMenu) setAnchorEl(event.currentTarget);
+              else if (item.path) {
+                setAnchorEl(null);
+                navigate(item.path);
+              }
+            }}
+            sx={{ bgcolor: "white", flexGrow: 1 }}
+          >
+            {pages.map((item) => (
+              <BottomNavigationAction key={item.label} label={item.label} icon={item.icon} />
+            ))}
+          </BottomNavigation>
 
-            if (item.isMenu) {
-              setAnchorEl(event.currentTarget);
-            } else if (item.path) {
-              setAnchorEl(null);
-              navigate(item.path);
-            }
-          }}
-          sx={{ bgcolor: "white" }}
-        >
-          {pages.map((item) => (
-            <BottomNavigationAction
-              key={item.label}
-              label={item.label}
-              icon={item.icon}
-              sx={{
-                touchAction: "manipulation",
-                "&:hover": { bgcolor: "black", color: "white" },
-                "&:hover .MuiBottomNavigationAction-label": {
-                  color: "white",
-                },
-              }}
-            />
-          ))}
-        </BottomNavigation>
+          {/* Selector de idioma vertical */}
+          <IconButton onClick={handleLangClick} sx={{ flexDirection: "column" }}>
+            <LanguageIcon />
+            <Typography variant="caption">{language === "es" ? "🇪🇸 Español" : language}</Typography>
+          </IconButton>
+        </Toolbar>
       </AppBar>
 
       {/* PLANTILLAS MENU */}
@@ -240,6 +261,20 @@ export default function TopNavBar() {
         </List>
       </Menu>
 
+      {/* LANGUAGE MENU */}
+      <Menu
+        anchorEl={langAnchorEl}
+        open={Boolean(langAnchorEl)}
+        onClose={() => setLangAnchorEl(null)}
+      >
+<MenuItem onClick={() => handleLangSelect("es")}>🇪🇸 Español</MenuItem>
+<MenuItem onClick={() => handleLangSelect("en")}>🇬🇧 English</MenuItem>
+<MenuItem onClick={() => handleLangSelect("fr")}>🇫🇷 Français</MenuItem>
+<MenuItem onClick={() => handleLangSelect("de")}>🇩🇪 Deutsch</MenuItem>
+<MenuItem onClick={() => handleLangSelect("it")}>🇮🇹 Italiano</MenuItem>
+
+      </Menu>
+
       {/* BOTTOM NAV */}
       <Box sx={{ position: "fixed", bottom: 0, width: "100%", zIndex: 1200 }}>
         <BottomNavigation
@@ -259,14 +294,24 @@ export default function TopNavBar() {
               sx={{
                 touchAction: "manipulation",
                 "&:hover": { bgcolor: "black", color: "white" },
-                "&:hover .MuiBottomNavigationAction-label": {
-                  color: "white",
-                },
+                "&:hover .MuiBottomNavigationAction-label": { color: "white" },
               }}
             />
           ))}
         </BottomNavigation>
       </Box>
+
+      {/* SNACKBAR FAKE */}
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={4000}
+        onClose={() => setSnackbarOpen(false)}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      >
+        <Alert severity="info" sx={{ width: "100%" }}>
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </>
   );
 }

@@ -40,7 +40,7 @@
   <script type="module" src="/src/main.jsx"></script>
 
   <script>
-    window.web = "watt.report";
+    window.web = "Watt.Report";
     var initials = web.match(/[A-Z]/g)?.join("").slice(0, 2) || "A";
     generateFavicon(initials);
     document.title = web; // Asignar dinámicamente el título
@@ -50,8 +50,8 @@
       var canvas = document.createElement('canvas');
       var context = canvas.getContext('2d');
 
-      canvas.width = 64;
-      canvas.height = 64;
+      canvas.width = 88;
+      canvas.height = 88;
 
       // Fondo negro
       context.fillStyle = "black";
