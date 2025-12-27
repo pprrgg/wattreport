@@ -50,7 +50,7 @@ const InicioSection = () => {
               fontWeight: 700,
             }}
           >
-            InformeTécnico.app
+            watt.report
           </Typography>
 
           {/* Subtitle */}
