@@ -153,22 +153,23 @@ export default function TopNavBar() {
   const handleLangClick = (event) => {
     setLangAnchorEl(event.currentTarget);
   };
-const messages = {
-  en: "English is not available for your IP.",
-  fr: "Français n'est pas disponible pour votre IP.",
-  de: "Deutsch ist für Ihre IP nicht verfügbar.",
-  it: "Italiano non è disponibile per il tuo IP.",
-};
+  const messages = {
+    en: "English is not available for your IP.",
+    fr: "Français n'est pas disponible pour votre IP.",
+    de: "Deutsch ist für Ihre IP nicht verfügbar.",
+    it: "Italiano non è disponibile per il tuo IP.",
+    pt: "Português não está disponível para o seu IP.",
+  };
 
-const handleLangSelect = (lang) => {
-  if (lang === "es") {
-    setLanguage(lang);
-  } else {
-    setSnackbarMessage(messages[lang] || "Language not available");
-    setSnackbarOpen(true);
-  }
-  setLangAnchorEl(null);
-};
+  const handleLangSelect = (lang) => {
+    if (lang === "es") {
+      setLanguage(lang);
+    } else {
+      setSnackbarMessage(messages[lang] || "Language not available");
+      setSnackbarOpen(true);
+    }
+    setLangAnchorEl(null);
+  };
 
   return (
     <>
@@ -301,11 +302,12 @@ const handleLangSelect = (lang) => {
         open={Boolean(langAnchorEl)}
         onClose={() => setLangAnchorEl(null)}
       >
-        <MenuItem onClick={() => handleLangSelect("es")}>🇪🇸 Español</MenuItem>
-        <MenuItem onClick={() => handleLangSelect("en")}>🇬🇧 English</MenuItem>
-        <MenuItem onClick={() => handleLangSelect("fr")}>🇫🇷 Français</MenuItem>
         <MenuItem onClick={() => handleLangSelect("de")}>🇩🇪 Deutsch</MenuItem>
+        <MenuItem onClick={() => handleLangSelect("en")}>🇬🇧 English</MenuItem>
+        <MenuItem onClick={() => handleLangSelect("es")}>🇪🇸 Español</MenuItem>
+        <MenuItem onClick={() => handleLangSelect("fr")}>🇫🇷 Français</MenuItem>
         <MenuItem onClick={() => handleLangSelect("it")}>🇮🇹 Italiano</MenuItem>
+        <MenuItem onClick={() => handleLangSelect("pt")}>🇵🇹 Português</MenuItem>
       </Menu>
 
       {/* BOTTOM NAV */}
