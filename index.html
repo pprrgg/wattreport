@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary Meta Tags -->
+  <title>InformeTecnico.app - Generador de Informes Técnicos Profesionales</title>
+  <meta name="description" content="Genera informes técnicos profesionales para eficiencia energética, renovables y estaciones de recarga EV usando plantillas  personalizables.">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://informetecnico.app/">
+  <meta property="og:title" content="InformeTecnico.app - Generador de Informes Técnicos">
+  <meta property="og:description" content="Crea informes técnicos personalizados para proyectos de energía y movilidad eléctrica en minutos">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://informetecnico.app/">
+  <meta property="twitter:title" content="InformeTecnico.app - Generador de Informes Técnicos">
+  <meta property="twitter:description" content="Plantillas para informes de eficiencia energética, renovables y electrolineras">
+
+  <!-- Keywords -->
+  <meta name="keywords" content="informe técnico, generador de informes, eficiencia energética, energías renovables, estaciones de recarga EV, electrolineras, plantillas informes técnicos, informe técnico automático, software de informes, herramientas para ingenieros, consultoría energética">
+
+  <!-- Autor -->
+  <meta name="author" content="InformeTecnico.app">
+
+  <!-- Importar fuentes manuscritas desde Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Patrick+Hand&family=Shadows+Into+Light&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<!-- Resto del código... -->
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+
+  <script>
+    window.web = "Informe Técnico";
+    var initials = web.match(/[A-Z]/g)?.join("").slice(0, 2) || "A";
+    generateFavicon(initials);
+    document.title = web; // Asignar dinámicamente el título
+
+    // Función para generar el favicon
+    function generateFavicon(initials) {
+      var canvas = document.createElement('canvas');
+      var context = canvas.getContext('2d');
+
+      canvas.width = 64;
+      canvas.height = 64;
+
+      // Fondo negro
+      context.fillStyle = "black";
+      context.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Texto en color blanco
+      context.font = "bold 60px sans-serif";
+      context.textAlign = "center";
+      context.textBaseline = "middle";
+      context.fillStyle = "white";
+      context.fillText(initials, canvas.width / 2, canvas.height / 2);
+
+      // Crear el favicon
+      var link = document.createElement('link');
+      link.rel = 'icon';
+      link.href = canvas.toDataURL('image/png');
+      document.head.appendChild(link);
+    }
+  </script>
+</body>
+</html>

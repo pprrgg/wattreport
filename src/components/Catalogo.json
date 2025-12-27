@@ -1,0 +1,209 @@
+[
+    {
+        "sector": "A61_Autoconsumo_Individual",
+        "grupo": "A6_Sistema_FV",
+        "cod": "FV01_Generador_FV_Conectado_a_red",
+        "descripcion": [
+            "Este informe analiza la facturación por potencia en la factura eléctrica, diferenciando entre la potencia contratada, que representa un coste fijo, y la potencia demandada, que genera costes adicionales si se supera la contratada.",
+            "",
+            "El objetivo del estudio es encontrar la potencia óptima a contratar en cada periodo horario para minimizar el coste anual total por potencia (FPT), considerando tanto los cargos por potencia contratada (FPC) como por potencia demandada (FPD).",
+            ""
+        ]
+    },
+    {
+        "sector": "A60_Comun",
+        "grupo": "A6_Sistema_FV",
+        "cod": "FV00_Tramitación_instalaciones_de_autoconsumo",
+        "descripcion": [
+            "Este informe analiza la facturación por potencia en la factura eléctrica, diferenciando entre la potencia contratada, que representa un coste fijo, y la potencia demandada, que genera costes adicionales si se supera la contratada.",
+            "",
+            "El objetivo del estudio es encontrar la potencia óptima a contratar en cada periodo horario para minimizar el coste anual total por potencia (FPT), considerando tanto los cargos por potencia contratada (FPC) como por potencia demandada (FPD).",
+            ""
+        ]
+    },
+    {
+        "sector": "A62_Autoconumo_Colectivo",
+        "grupo": "A6_Sistema_FV",
+        "cod": "A00_plantilla",
+        "descripcion": [
+            "Este informe analiza la facturación por potencia en la factura eléctrica, diferenciando entre la potencia contratada, que representa un coste fijo, y la potencia demandada, que genera costes adicionales si se supera la contratada.",
+            ""
+        ]
+    },
+    {
+        "sector": "A52_Residencial",
+        "grupo": "A5_Medida_de_ahorro_energético",
+        "cod": "RES020_Rehabilitación_de_la_parte_opaca_de_la_envolvente_térmica_de_edificios_de_viviendas_con_superficie_afectada_inferior_o_igual_al_25_por_ciento_de_la_envolvente_térmica_final",
+        "descripcion": []
+    },
+    {
+        "sector": "A52_Residencial",
+        "grupo": "A5_Medida_de_ahorro_energético",
+        "cod": "RES092_Hibridación_en_modo_paralelo_de_caldera_s_de_combustión_con_bomba_de_calor_de_accionamiento_eléctrico_en_edificios_residenciales_ubicados_en_la_zona_climática_C1_C2_C3_o_C4",
+        "descripcion": []
+    },
+    {
+        "sector": "A52_Residencial",
+        "grupo": "A5_Medida_de_ahorro_energético",
+        "cod": "RES090_Hibridación_en_modo_paralelo_de_caldera_s_de_combustión_con_bomba_de_calor_de_accionamiento_eléctrico_en_edificios_residenciales_ubicados_en_la_zona_climática_A3_o_A4",
+        "descripcion": []
+    },
+    {
+        "sector": "A52_Residencial",
+        "grupo": "A5_Medida_de_ahorro_energético",
+        "cod": "RES010_Rehabilitación_de_la_envolvente_térmica_de_edificios_de_viviendas_con_superficie_afectada_mayor_del_25_por_ciento",
+        "descripcion": []
+    },
+    {
+        "sector": "A52_Residencial",
+        "grupo": "A5_Medida_de_ahorro_energético",
+        "cod": "RES093_Hibridación_en_modo_paralelo_de_caldera_s_de_combustión_con_bomba_de_calor_de_accionamiento_eléctrico_en_edificios_residenciales_ubicados_en_la_zona_climática_D1_D2_o_D3",
+        "descripcion": []
+    },
+    {
+        "sector": "A52_Residencial",
+        "grupo": "A5_Medida_de_ahorro_energético",
+        "cod": "RES060_Sustitución_de_caldera_de_combustión_por_una_bomba_de_calor_de_accionamiento_eléctrico",
+        "descripcion": []
+    },
+    {
+        "sector": "A52_Residencial",
+        "grupo": "A5_Medida_de_ahorro_energético",
+        "cod": "RES094_Hibridación_en_modo_paralelo_de_caldera_s_de_combustión_con_bomba_de_calor_de_accionamiento_eléctrico_en_edificios_residenciales_ubicados_en_la_zona_climática_E1",
+        "descripcion": []
+    },
+    {
+        "sector": "A52_Residencial",
+        "grupo": "A5_Medida_de_ahorro_energético",
+        "cod": "RES091_Hibridación_en_modo_paralelo_de_caldera_s_de_combustión_con_bomba_de_calor_de_accionamiento_eléctrico_en_edificios_residenciales_ubicados_en_la_zona_climática_B3_o_B4",
+        "descripcion": []
+    },
+    {
+        "sector": "A51_Industrial",
+        "grupo": "A5_Medida_de_ahorro_energético",
+        "cod": "IND260_Sustitución_de_un_Sistema_de_Alimentación_Ininterrumpida_SAI",
+        "descripcion": []
+    },
+    {
+        "sector": "A51_Industrial",
+        "grupo": "A5_Medida_de_ahorro_energético",
+        "cod": "IND090_Sustitución_o_reemplazo_de_compresor_de_aire_por_uno_más_eficiente",
+        "descripcion": []
+    },
+    {
+        "sector": "A51_Industrial",
+        "grupo": "A5_Medida_de_ahorro_energético",
+        "cod": "IND240_Implantación_de_variador_de_velocidad",
+        "descripcion": [
+            "'El presente estudio técnico-económico evalúa la implementación de una Medida de Ahorro Energético (MAE) ' + 'consistente en la instalación de variadores de velocidad en motores eléctricos, en cumplimiento de los ' + 'requisitos establecidos en la norma ISO 50001 de Sistemas de Gestión de la Energía.' + ' '",
+            "'El análisis demuestra que la instalación de variadores de velocidad en los motores existentes, ' + f'con una potencia total de {ss.Estudio_MAE.loc['Potencia total motores', 'Valor']} kW distribuida en ' + f'{ss.Estudio_MAE.loc['Número de motores', 'Valor']} equipos, permite alcanzar ahorros energéticos significativos ' + 'mediante la regulación de la velocidad en función de la demanda real del proceso.' + ' '",
+            "f'La inversión requerida asciende a €{ss.inversion_total:,.0f}, generando un ahorro anual estimado de ' + f'€{ss.ahorro_total_anual:,.0f}, lo que se traduce en un período de retorno de la inversión de {ss.payback:.2f} años. ' + 'Los indicadores financieros confirman la viabilidad del proyecto, con un Valor Actual Neto de ' + f'€{ss.van:,.0f} y una Tasa Interna de Retorno del {ss.tir:.1f}%, muy por encima del costo de capital considerado.' + ' '",
+            "f'En términos energéticos, se prevé una reducción del consumo de {ss.ahorro_energetico:,.0f} kWh anuales, ' + f'equivalente a una disminución del {ss.ahorro_energetico / ss.consumo_actual * 100:.1f}% respecto al consumo actual. ' + 'Esta mejora en la eficiencia energética contribuye directamente al cumplimiento de los objetivos ' + 'establecidos en el Sistema de Gestión de la Energía de la organización.' + ' '",
+            "'De acuerdo con los criterios de evaluación establecidos en la norma ISO 50001, se recomienda la ' + 'implementación de esta MAE por su contribución significativa a la mejora continua del desempeño ' + 'energético y su demostrada rentabilidad económica.' + ' '"
+        ]
+    },
+    {
+        "sector": "A51_Industrial",
+        "grupo": "A5_Medida_de_ahorro_energético",
+        "cod": "IND290_Recuperación_de_calor_en_circuito_frigorifico",
+        "descripcion": []
+    },
+    {
+        "sector": "A53_Terciario",
+        "grupo": "A5_Medida_de_ahorro_energético",
+        "cod": "TER280_Sustitución_de_bomba_por_otra_más_eficiente",
+        "descripcion": []
+    },
+    {
+        "sector": "A53_Terciario",
+        "grupo": "A5_Medida_de_ahorro_energético",
+        "cod": "TER260_Sustitución_de_un_Sistema_de_Alimentación_Ininterrumpida_SAI",
+        "descripcion": []
+    },
+    {
+        "sector": "A53_Terciario",
+        "grupo": "A5_Medida_de_ahorro_energético",
+        "cod": "TER040_Sustitución_de_generador_de_climatización_por_bomba_de_calor_de_accionamiento_eléctrico",
+        "descripcion": []
+    },
+    {
+        "sector": "A11_Hasta_50_kW",
+        "grupo": "A1_Contrato_de_energía_eléctrica",
+        "cod": "A112_Facturación_por_potencia",
+        "descripcion": [
+            "Este informe presenta el análisis de la facturación por potencia en la factura eléctrica, desglosando los costes asociados a la potencia contratada y a la potencia demandada.",
+            "",
+            "El objetivo del estudio es determinar el coste anual total por potencia (FPT) a partir de los datos de facturación y los términos regulados vigentes para el año 2025.",
+            "",
+            "Se aplican las fórmulas oficiales de cálculo según la normativa eléctrica, considerando los precios por período horario y los posibles excesos de potencia registrados mediante maxímetros.",
+            "",
+            "Los resultados permiten:",
+            "  • Identificar los componentes del coste total (FPC y FPD).",
+            "  • Evaluar el impacto de los excesos de potencia sobre la factura.",
+            "  • Obtener una visión porcentual de la contribución de cada término en el coste total.",
+            "",
+            "En conclusión, este análisis proporciona una herramienta útil para optimizar la potencia contratada y reducir los costes energéticos anuales.",
+            " "
+        ]
+    },
+    {
+        "sector": "A11_Hasta_50_kW",
+        "grupo": "A1_Contrato_de_energía_eléctrica",
+        "cod": "A111_Optimización_de_la_potencia_contratada",
+        "descripcion": [
+            "Este informe analiza la facturación por potencia en la factura eléctrica, diferenciando entre la potencia contratada, que representa un coste fijo, y la potencia demandada, que genera costes adicionales si se supera la contratada.",
+            "",
+            "El objetivo del estudio es encontrar la potencia óptima a contratar en cada periodo horario para minimizar el coste anual total por potencia (FPT), considerando tanto los cargos por potencia contratada (FPC) como por potencia demandada (FPD).",
+            "",
+            "Se aplican fórmulas reguladas de cálculo de facturación y un algoritmo de optimización secuencial de mínimos cuadrados para determinar la potencia contratada óptima (Pc_po) en cada periodo tarifario.",
+            "",
+            "Los resultados permiten:",
+            "  • Identificar los componentes de la factura eléctrica y su contribución relativa al coste total.",
+            "  • Determinar la potencia óptima a contratar para minimizar FPT en todos los periodos horarios.",
+            "  • Evaluar el impacto de los excesos de potencia sobre la factura y proponer ajustes para reducir costes.",
+            "",
+            "El informe incluye tablas y gráficos que muestran los valores de FPC, FPD y FPT, así como los porcentajes relativos de cada término, facilitando la interpretación de los resultados y la toma de decisiones energéticas.",
+            " "
+        ]
+    },
+    {
+        "sector": "A12_Mayor_de_50_kW",
+        "grupo": "A1_Contrato_de_energía_eléctrica",
+        "cod": "A122_Facturación_por_potencia",
+        "descripcion": [
+            " ",
+            "El presente documento expone el procedimiento de cálculo del coste anual asociado a la facturación por potencia en una factura eléctrica. La facturación por potencia se compone de dos términos: la potencia contratada (F<sub>PC</sub>), de carácter fijo, y la potencia demandada (F<sub>PD</sub>), que se aplica cuando la potencia medida supera la contratada.         Se presentan las expresiones matemáticas utilizadas para determinar la facturación total por potencia (F<sub>PT</sub> = F<sub>PC</sub> + F<sub>PD</sub>), así como los datos de entrada necesarios: lecturas de energía en intervalos de 15 minutos, precios unitarios por periodo horario (T<sub>pp</sub> y tep<sub>p</sub><sup>1–3</sup>) y potencias contratadas (P<sub>cp</sub>).         El estudio incluye tablas y gráficos que muestran la evolución de los distintos componentes de la facturación, permitiendo analizar los sobrepasamientos de potencia y su impacto económico. Finalmente, se cuantifica la facturación anual por potencia contratada, demandada y total, junto con su distribución porcentual dentro del término de potencia."
+        ]
+    },
+    {
+        "sector": "A12_Mayor_de_50_kW",
+        "grupo": "A1_Contrato_de_energía_eléctrica",
+        "cod": "A121_Optimización_de_la_potencia_contratada",
+        "descripcion": [
+            "Este informe analiza la facturación por potencia en la factura eléctrica, diferenciando entre la potencia contratada, que representa un coste fijo, y la potencia demandada, que genera costes adicionales si se supera la contratada.",
+            "",
+            "El objetivo del estudio es encontrar la potencia óptima a contratar en cada periodo horario para minimizar el coste anual total por potencia (FPT), considerando tanto los cargos por potencia contratada (FPC) como por potencia demandada (FPD).",
+            "",
+            "Se aplican fórmulas reguladas de cálculo de facturación y un algoritmo de optimización secuencial de mínimos cuadrados para determinar la potencia contratada óptima (Pc_po) en cada periodo tarifario.",
+            "",
+            "Los resultados permiten:",
+            "  • Identificar los componentes de la factura eléctrica y su contribución relativa al coste total.",
+            "  • Determinar la potencia óptima a contratar para minimizar FPT en todos los periodos horarios.",
+            "  • Evaluar el impacto de los excesos de potencia sobre la factura y proponer ajustes para reducir costes.",
+            "",
+            "El informe incluye tablas y gráficos que muestran los valores de FPC, FPD y FPT, así como los porcentajes relativos de cada término, facilitando la interpretación de los resultados y la toma de decisiones energéticas.",
+            " "
+        ]
+    },
+    {
+        "sector": "A81_Simplificado",
+        "grupo": "A8_Estudio",
+        "cod": "A811_VIABILIDAD_ECONÓMICA_DE_LA_INVERSIÓN",
+        "descripcion": [
+            "El presente documento resume el análisis económico-financiero de un proyecto de inversión, considerando no solo VAN, TIR y Payback, sino también otros indicadores indispensables como el Payback descontado, el Índice de Rentabilidad (PI) y la tasa de descuento aplicada.",
+            " ",
+            "comentario",
+            " "
+        ]
+    }
+]

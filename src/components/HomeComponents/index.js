@@ -1,0 +1,9 @@
+export { default as LandingSection } from './LandingSection';
+export { default as CarruselSection } from './CarruselSection';
+export { default as InicioSection } from './InicioSection';
+export { default as DescripcionSection } from './DescripcionSection';
+export { default as ServiciosSection } from './ServiciosSection';
+export { default as FaqSection } from './FaqSection';
+export { default as ContactoSection } from './ContactoSection';
+export { default as AyudaSection } from './AyudaSection';
+export { default as SEOSection } from './SEOSection';
