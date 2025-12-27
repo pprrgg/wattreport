@@ -698,7 +698,7 @@ const NavigationBarDocs = () => {
                                   <Box
                                     sx={{
                                       width: "100%",
-                                      backgroundColor: "grey",
+                                      backgroundColor: "darkblue",
                                       color: "white",
                                       textAlign: "center",
                                       py: 1,

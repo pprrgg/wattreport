@@ -39,37 +39,47 @@
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 
-  <script>
-    window.web = "Watt.Report";
-    var initials = web.match(/[A-Z]/g)?.join("").slice(0, 2) || "A";
-    generateFavicon(initials);
-    document.title = web; // Asignar dinámicamente el título
+<script>
+  window.web = "Watt.report";
+  var initials = web.match(/\b\w/g)?.join("").slice(0, 2) || "A";
+  generateFavicon(initials);
+  document.title = web; // Asignar dinámicamente el título
 
-    // Función para generar el favicon
-    function generateFavicon(initials) {
-      var canvas = document.createElement('canvas');
-      var context = canvas.getContext('2d');
+  function generateFavicon(initials) {
+    var canvas = document.createElement('canvas');
+    var context = canvas.getContext('2d');
 
-      canvas.width = 88;
-      canvas.height = 88;
+    canvas.width = 66;
+    canvas.height = 66;
 
-      // Fondo negro
-      context.fillStyle = "black";
-      context.fillRect(0, 0, canvas.width, canvas.height);
+    // Fondo azul
+    context.fillStyle = "darkblue";
+    context.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Texto en color blanco
+    // Primera inicial (más grande, naranja)
+    if (initials[0]) {
       context.font = "bold 60px sans-serif";
+      context.fillStyle = "orange";
       context.textAlign = "center";
       context.textBaseline = "middle";
-      context.fillStyle = "white";
-      context.fillText(initials, canvas.width / 2, canvas.height / 2);
-
-      // Crear el favicon
-      var link = document.createElement('link');
-      link.rel = 'icon';
-      link.href = canvas.toDataURL('image/png');
-      document.head.appendChild(link);
+      context.fillText(initials[0], canvas.width / 3, canvas.height / 2);
     }
-  </script>
+
+    // Segunda inicial (más pequeña, blanca)
+    if (initials[1]) {
+      context.font = "bold 60px sans-serif";
+      context.fillStyle = "white";
+      context.fillText(initials[1], canvas.width * 2 / 2.5, canvas.height / 2);
+    }
+
+    // Crear el favicon
+    var link = document.createElement('link');
+    link.rel = 'icon';
+    link.href = canvas.toDataURL('image/png');
+    document.head.appendChild(link);
+  }
+</script>
+
+
 </body>
 </html>
