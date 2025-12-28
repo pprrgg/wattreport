@@ -634,113 +634,111 @@ const NavigationBarDocs = () => {
                               }}
                             >
                               {fichas.map((ficha) => (
-                                <Card
-                                  key={ficha.cod}
-                                  sx={{
-                                    flex: {
-                                      xs: "0 0 100%",
-                                      sm: "0 0 48%",
-                                    },
-                                    minWidth: {
-                                      xs: "100%",
-                                      sm: "48%",
-                                    },
-                                    borderRadius: "12px",
-                                    overflow: "hidden",
-                                    backgroundColor: "#fff",
-                                    border: "2px solid darkblue",
-                                    boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
-                                    transition: "all 0.3s ease",
-                                    cursor: "pointer",
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    position: "relative",
-                                    "&:hover": {
-                                      transform: "scale(1.03)",
-                                      borderColor: "darkblue",
-                                      boxShadow:
-                                        "0 6px 18px rgba(0, 0, 139, 0.15)",
-                                    },
-                                  }}
-                                  onClick={() => handleFichaClick(ficha)}
-                                >
-                                  <Box
-                                    sx={{
-                                      width: "100%",
-                                      position: "relative",
-                                      paddingTop: "55%",
-                                    }}
-                                  >
-                                    <CardMedia
-                                      component="img"
-                                      image={`/routers/${encodeURIComponent(
-                                        ficha.grupo
-                                      )}/${encodeURIComponent(
-                                        ficha.sector
-                                      )}/${encodeURIComponent(ficha.cod)}.png`}
-                                      alt={ficha.cod}
-                                      sx={{
-                                        position: "absolute",
-                                        top: 0,
-                                        left: 0,
-                                        width: "100%",
-                                        height: "100%",
-                                        objectFit: "contain",
-                                        backgroundColor: "#fafafa",
-                                      }}
-                                      onError={(e) =>
-                                        (e.currentTarget.src =
-                                          "/img/defecto.png")
-                                      }
-                                    />
-                                  </Box>
 
-                                  <Box
-                                    sx={{
-                                      width: "100%",
-                                      backgroundColor: "darkblue",
-                                      color: "white",
-                                      textAlign: "center",
-                                      py: 1,
-                                      px: 1,
-                                      fontWeight: "bold",
-                                      fontSize: {
-                                        xs: 14,
-                                        sm: 16,
-                                      },
-                                      whiteSpace: "normal",
-                                      overflowWrap: "break-word",
-                                    }}
-                                  >
-                                    {ficha.cod.replace(/_/g, " ")}
-                                  </Box>
 
-                                  <Button
-                                    variant="outlined"
-                                    sx={{
-                                      position: "absolute",
-                                      top: "2%",
-                                      right: "2%",
-                                      borderRadius: "6px",
-                                      borderColor: "transparent",
-                                      color: "darkblue",
-                                      padding: 0.2,
-                                      minWidth: "auto",
-                                      textTransform: "none",
-                                      transition: "all .25s ease",
-                                      "&:hover": {
-                                        backgroundColor: "darkblue",
-                                        color: "#fff",
-                                        borderColor: "darkblue",
-                                      },
-                                    }}
-                                    onClick={() => handleFichaClick(ficha)}
-                                  >
-                                    <NoteAltOutlinedIcon
-                                      sx={{ fontSize: 30 }}
-                                    />
-                                  </Button>
-                                </Card>
+<Card
+  key={ficha.cod}
+  sx={{
+    flex: {
+      xs: "0 0 100%",
+      sm: "0 0 48%",
+    },
+    minWidth: {
+      xs: "100%",
+      sm: "48%",
+    },
+    borderRadius: "12px",
+    overflow: "hidden",
+    backgroundColor: "#fff",
+    border: "2px solid darkblue",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+    transition: "all 0.3s ease",
+    cursor: "default", // cambia el cursor para toda la card
+    display: "flex",
+    flexDirection: "column",
+    position: "relative",
+    "&:hover": {
+      transform: "scale(1.03)",
+      borderColor: "darkblue",
+      boxShadow: "0 6px 18px rgba(0, 0, 139, 0.15)",
+    },
+  }}
+>
+  {/* 🔹 TITULO ARRIBA */}
+  <Box
+    sx={{
+      width: "100%",
+      backgroundColor: "darkblue",
+      color: "white",
+      textAlign: "center",
+      py: 1,
+      px: 1,
+      fontWeight: "bold",
+      fontSize: { xs: 14, sm: 16 },
+      whiteSpace: "normal",
+      overflowWrap: "break-word",
+    }}
+  >
+    {ficha.cod.replace(/_/g, " ")}
+  </Box>
+
+  {/* 🔹 IMAGEN DEBAJO */}
+  <Box
+    sx={{
+      width: "100%",
+      position: "relative",
+      paddingTop: "55%",
+    }}
+  >
+    <CardMedia
+      component="img"
+      image={`/routers/${encodeURIComponent(ficha.grupo)}/${encodeURIComponent(
+        ficha.sector
+      )}/${encodeURIComponent(ficha.cod)}.png`}
+      alt={ficha.cod}
+      sx={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        objectFit: "contain",
+        backgroundColor: "#fafafa",
+      }}
+      onError={(e) => (e.currentTarget.src = "/img/defecto.png")}
+    />
+  </Box>
+
+  {/* Botón flotante interactivo */}
+  <Button
+    variant="outlined"
+    sx={{
+      position: "absolute",
+      bottom: "2%",
+      right: "2%",
+      borderRadius: "6px",
+      borderColor: "transparent",
+      color: "darkblue",
+      padding: 0.2,
+      minWidth: "auto",
+      textTransform: "none",
+      transition: "all .25s ease",
+      zIndex: 3,
+      cursor: "pointer",
+      "&:hover": {
+        backgroundColor: "darkblue",
+        color: "#fff",
+        borderColor: "darkblue",
+      },
+    }}
+    onClick={() => handleFichaClick(ficha)}
+  >
+    <NoteAltOutlinedIcon sx={{ fontSize: 50 }} />
+  </Button>
+</Card>
+
+
+
                               ))}
                             </Box>
 
