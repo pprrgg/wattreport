@@ -302,12 +302,12 @@ export default function TopNavBar() {
         open={Boolean(langAnchorEl)}
         onClose={() => setLangAnchorEl(null)}
       >
-        <MenuItem onClick={() => handleLangSelect("de")}>🇩🇪 Deutsch</MenuItem>
+        {/* <MenuItem onClick={() => handleLangSelect("de")}>🇩🇪 Deutsch</MenuItem> */}
         <MenuItem onClick={() => handleLangSelect("en")}>🇬🇧 English</MenuItem>
         <MenuItem onClick={() => handleLangSelect("es")}>🇪🇸 Español</MenuItem>
-        <MenuItem onClick={() => handleLangSelect("fr")}>🇫🇷 Français</MenuItem>
+        {/* <MenuItem onClick={() => handleLangSelect("fr")}>🇫🇷 Français</MenuItem>
         <MenuItem onClick={() => handleLangSelect("it")}>🇮🇹 Italiano</MenuItem>
-        <MenuItem onClick={() => handleLangSelect("pt")}>🇵🇹 Português</MenuItem>
+        <MenuItem onClick={() => handleLangSelect("pt")}>🇵🇹 Português</MenuItem> */}
       </Menu>
 
       {/* BOTTOM NAV */}
