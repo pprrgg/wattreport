@@ -148,7 +148,8 @@ const ContactoSection = () => {
                     <em>Selecciona una opción</em>
                   </MenuItem>
                   <MenuItem value="contribuir">Contribuir</MenuItem>
-                  <MenuItem value="modificar">Modificar</MenuItem>
+                  <MenuItem value="InformePersonalizado">Informe Personalizado</MenuItem>
+                  <MenuItem value="ProyectoCompleto">Proyecto Completo</MenuItem>
                   <MenuItem value="asesoria">Asesoría</MenuItem>
                   <MenuItem value="otros">Otros</MenuItem>
                 </Select>
