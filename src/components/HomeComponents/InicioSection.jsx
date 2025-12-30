@@ -63,36 +63,14 @@ const InicioSection = () => {
 
           {/* Subtitle */}
           <Typography
-            variant="h5"
-            sx={{
-              maxWidth: 800,
-              mx: "auto",
-              mb: 5,
-              opacity: 0.9,
-              fontSize: {
-                xs: "1rem",
-                sm: "1.25rem",
-                md: "1.5rem",
-              },
-              px: { xs: 2, sm: 0 },
-            }}
+            variant="h2"
+
           >
             Informes técnicos profesionales.
           </Typography>
           <Typography
             variant="h5"
-            sx={{
-              maxWidth: 800,
-              mx: "auto",
-              mb: 5,
-              opacity: 0.9,
-              fontSize: {
-                xs: "1rem",
-                sm: "1.1rem",
-                md: "1.25rem",
-              },
-              px: { xs: 2, sm: 0 },
-            }}
+
           >
             Sin instalación,
             sin registro y totalmente gratuito.
