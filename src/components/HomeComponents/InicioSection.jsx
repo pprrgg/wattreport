@@ -71,16 +71,32 @@ const InicioSection = () => {
               opacity: 0.9,
               fontSize: {
                 xs: "1rem",
+                sm: "1.25rem",
+                md: "1.5rem",
+              },
+              px: { xs: 2, sm: 0 },
+            }}
+          >
+            Informes técnicos profesionales.
+          </Typography>
+          <Typography
+            variant="h5"
+            sx={{
+              maxWidth: 800,
+              mx: "auto",
+              mb: 5,
+              opacity: 0.9,
+              fontSize: {
+                xs: "1rem",
                 sm: "1.1rem",
                 md: "1.25rem",
               },
               px: { xs: 2, sm: 0 },
             }}
           >
-            Genera informes técnicos profesionales en minutos. Sin instalación,
+            Sin instalación,
             sin registro y totalmente gratuito.
           </Typography>
-
           {/* CTA Buttons */}
           <Stack
             direction={{ xs: "column", sm: "row" }}
