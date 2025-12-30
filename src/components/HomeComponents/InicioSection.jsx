@@ -66,7 +66,7 @@ const InicioSection = () => {
             variant="h2"
 
           >
-            Informes técnicos profesionales.
+            Informes técnicos.
           </Typography>
           <Typography
             variant="h5"
