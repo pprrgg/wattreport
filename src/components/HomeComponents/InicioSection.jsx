@@ -62,9 +62,47 @@ const InicioSection = () => {
           </Typography>
 
           {/* Subtitle */}
-          <Typography variant="h6">Genera tu</Typography>
-          <Typography variant="h2">Informe técnico-económico</Typography>
-          <Typography variant="h5">sin registro y totalmente gratuito.</Typography>
+          {/* Subtitle */}
+          <Typography
+            variant="h7"
+            sx={{
+              mb: 0,         // sin margen inferior
+              lineHeight: 1, // ajusta la altura de línea
+            }}
+          >
+            Genera tu
+          </Typography>
+
+          <Typography
+            sx={{
+              fontSize: {
+                xs: "2rem",
+                sm: "2.5rem",
+                md: "3rem",
+                lg: "3.5rem",
+              },
+              mb: 0,               // eliminar margen inferior
+              fontFamily: "'Playfair Display', serif",
+              fontStretch: "condensed",
+              letterSpacing: "-0.085em",
+              fontWeight: 900,
+              lineHeight: 1.1,     // más compacto verticalmente
+              textTransform: "uppercase",
+            }}
+          >
+            Informe Técnico Económico
+          </Typography>
+
+          <Typography
+            variant="h7"
+            sx={{
+              mt: 0.5,     // pequeño margen superior si quieres separación mínima
+              lineHeight: 1,
+            }}
+          >
+            sin registro y totalmente gratuito.
+          </Typography>
+
 
           {/* CTA Buttons */}
           <Stack
