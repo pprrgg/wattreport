@@ -62,19 +62,10 @@ const InicioSection = () => {
           </Typography>
 
           {/* Subtitle */}
-          <Typography
-            variant="h2"
+          <Typography variant="h6">Genera tu</Typography>
+          <Typography variant="h2">Informe técnico-económico</Typography>
+          <Typography variant="h5">sin registro y totalmente gratuito.</Typography>
 
-          >
-            Informes técnicos.
-          </Typography>
-          <Typography
-            variant="h5"
-
-          >
-            Sin instalación,
-            sin registro y totalmente gratuito.
-          </Typography>
           {/* CTA Buttons */}
           <Stack
             direction={{ xs: "column", sm: "row" }}
